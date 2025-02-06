@@ -1,0 +1,34 @@
+baseURL: 'https://madjabal.github.io/'
+languageCode: 'en-us'
+title: 'My New Hugo Site'
+theme: 'PaperMod'
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    # - identifier: books
+    #   name: Books
+    #   url: /books/
+    #   weight: 20
+    # - identifier: papers
+    #   name: Papers
+    #   url: /papers/
+    #   weight: 30
+    # - identifier: tags
+    #   name: Tags
+    #   url: /tags/
+    #   weight: 40
+
+params:
+  # PaperMod specific settings
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowToc: true
