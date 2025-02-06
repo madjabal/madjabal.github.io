@@ -18,3 +18,36 @@ $$
 \nabla \times \mathbf{B} &= \mu_0\left(\mathbf{J} + \epsilon_0\frac{\partial \mathbf{E}}{\partial t}\right)
 \end{align*}
 $$
+
+Edit: even more math:
+
+Using custom vector macros: $\vx + \vy = \vz$
+
+A numbered equation:
+
+$$
+\begin{equation}
+\mat{A}\vx = \lambda\vx
+\label{eq:eigenvalue}
+\end{equation}
+$$
+
+Reference the equation using \eqref{eq:eigenvalue}.
+
+Using probability macros:
+$$
+\begin{equation}
+\prob(\vx \in A) = \expect[\mathbf{1}_A(\vx)]
+\label{eq:prob}
+\end{equation}
+$$
+
+Using norm macro: $\norm{\vx}$
+
+Integration with custom diff:
+$$
+\begin{equation}
+\int_a^b f(x) \diff x = F(b) - F(a)
+\label{eq:integral}
+\end{equation}
+$$
