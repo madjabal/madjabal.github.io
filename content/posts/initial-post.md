@@ -2,6 +2,7 @@
 date: 2025-02-05
 title: "Initial Post"
 draft: false
+math: true
 ---
 
 This is an initial post to test this setup while I flesh out the ideas for this website.
