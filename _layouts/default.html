@@ -6,21 +6,19 @@
     
     <!-- KaTeX CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    
     <!-- KaTeX JS -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
     
-    <!-- Script to convert kramdown's math/tex tags to KaTeX -->
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const mathBlocks = document.querySelectorAll('script[type^="math/tex"]');
-        Array.from(mathBlocks).forEach((el) => {
-            const tex = el.textContent.replace("% <![CDATA[", "").replace("%]]>", "");
-            el.outerHTML = window.katex.renderToString(tex, {
-                displayMode: el.type === "math/tex; mode=display",
-            });
-        });
-    });
-    </script>
+    <!-- KaTeX auto-render extension -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" 
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+        });"></script>
     
     <style>
         body { 
