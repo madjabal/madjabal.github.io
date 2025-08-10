@@ -2,6 +2,7 @@
 layout: default
 title: Testing LaTeX and Plotting
 date: 2025-08-09
+tags: [math, latex, testing, plotly]
 ---
 
 # Testing LaTeX Rendering
