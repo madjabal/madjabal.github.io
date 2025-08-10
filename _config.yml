@@ -3,11 +3,12 @@ description: Notes and Thoughts
 baseurl: ""
 url: "https://madjabal.github.io"
 
-# Fixed markdown settings for LaTeX
+# Markdown settings for LaTeX
 markdown: kramdown
 kramdown:
-  math_engine: null  # This is the key change!
+  math_engine: katex
   input: GFM
   syntax_highlighter: rouge
 
+# Theme (optional - removes if you want custom styling)
 theme: minima
