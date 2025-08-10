@@ -31,16 +31,19 @@
     
     <style>
         :root {
-            /* Color scheme - feel free to change these! */
-            --primary-color: #2563eb;      /* Blue */
-            --secondary-color: #7c3aed;    /* Purple */
-            --accent-color: #059669;       /* Green */
-            --text-color: #1f2937;         /* Dark gray */
-            --text-light: #6b7280;         /* Light gray */
-            --bg-color: #ffffff;           /* White */
-            --bg-secondary: #f9fafb;       /* Light gray bg */
-            --border-color: #e5e7eb;       /* Border gray */
-            --code-bg: #1f2937;            /* Dark code background */
+            /* Your custom dark palette */
+            --primary-color: #b91c1c;      /* Deep maroon */
+            --secondary-color: #dc2626;    /* Brighter maroon */
+            --accent-color: #d6d3d1;       /* Warm beige */
+            --text-color: #f1f5f9;         /* Light slate */
+            --text-light: #94a3b8;         /* Muted slate */
+            --bg-color: #0f172a;           /* Dark navy */
+            --bg-secondary: #1e293b;       /* Darker slate */
+            --bg-tertiary: #334155;        /* Medium slate */
+            --border-color: #475569;       /* Slate border */
+            --code-bg: #020617;            /* Very dark navy */
+            --maroon-hover: #991b1b;       /* Darker maroon for hovers */
+            --beige-muted: #a8a29e;        /* Muted beige */
         }
         
         * {
@@ -160,10 +163,142 @@
             border-radius: 0 8px 8px 0;
         }
         
-        /* Math styling */
-        .katex-display {
+        /* Navigation */
+        nav {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+            background: var(--bg-tertiary);
+        }
+        
+        /* Search */
+        .search-container {
+            margin-bottom: 2rem;
+        }
+        
+        #search-input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        #search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+        }
+        
+        #search-input::placeholder {
+            color: var(--text-light);
+        }
+        
+        #search-results {
+            margin-top: 1rem;
+        }
+        
+        .search-result {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .search-result:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .search-result h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary-color);
+        }
+        
+        .search-result .excerpt {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tag {
+            background: var(--bg-secondary);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+        
+        .tag:hover {
+            background: var(--primary-color);
+            color: var(--accent-color);
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .tag-count {
+            background: var(--bg-tertiary);
+            color: var(--beige-muted);
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+        }
+        
+        /* Tag cloud */
+        .tag-cloud {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
             margin: 2rem 0;
-            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .tag-cloud h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
         }
         
         /* Post list styling */
@@ -223,18 +358,25 @@
         }
         
         /* Dark mode support (optional) */
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: light) {
             :root {
-                --primary-color: #60a5fa;
-                --secondary-color: #a78bfa;
-                --accent-color: #34d399;
-                --text-color: #f9fafb;
-                --text-light: #d1d5db;
-                --bg-color: #111827;
-                --bg-secondary: #1f2937;
-                --border-color: #374151;
-                --code-bg: #0f172a;
+                --primary-color: #7f1d1d;      /* Darker maroon for light mode */
+                --secondary-color: #991b1b;    
+                --accent-color: #78716c;       /* Darker beige */
+                --text-color: #1e293b;         
+                --text-light: #64748b;         
+                --bg-color: #f8fafc;           
+                --bg-secondary: #f1f5f9;       
+                --bg-tertiary: #e2e8f0;        
+                --border-color: #cbd5e1;       
+                --code-bg: #1e293b;            
             }
+        }
+        
+        /* Math styling */
+        .katex-display {
+            margin: 2rem 0;
+            text-align: center;
         }
     </style>
 </head>
@@ -242,6 +384,24 @@
     <header>
         <h1><a href="/">{{ site.title }}</a></h1>
         <p>{{ site.description }}</p>
+        
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+                <li><a href="/archive" {% if page.url == "/archive/" %}class="active"{% endif %}>Archive</a></li>
+                <li><a href="/tags" {% if page.url == "/tags/" %}class="active"{% endif %}>Tags</a></li>
+                <li><a href="/about" {% if page.url == "/about/" %}class="active"{% endif %}>About</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Search -->
+        {% unless page.url == "/" %}
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search posts..." />
+            <div id="search-results"></div>
+        </div>
+        {% endunless %}
     </header>
     
     <main>
@@ -251,5 +411,56 @@
     <footer>
         <p>&copy; 2025 {{ site.title }} | Built with Jekyll & KaTeX</p>
     </footer>
+
+    <!-- Search functionality -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        
+        if (!searchInput) return;
+        
+        // Simple search - in a real implementation, you'd want to fetch from index.json
+        let posts = [];
+        
+        // Fetch posts data (you'll need to create index.json)
+        fetch('/index.json')
+            .then(response => response.json())
+            .then(data => posts = data)
+            .catch(() => console.log('No search index found'));
+        
+        function performSearch(query) {
+            if (query.length < 2) {
+                searchResults.innerHTML = '';
+                return;
+            }
+            
+            const results = posts.filter(post => 
+                post.title.toLowerCase().includes(query.toLowerCase()) ||
+                post.content.toLowerCase().includes(query.toLowerCase()) ||
+                (post.tags && post.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase())))
+            );
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = '<p style="color: var(--text-light); text-align: center;">No results found</p>';
+                return;
+            }
+            
+            searchResults.innerHTML = results.slice(0, 5).map(post => `
+                <div class="search-result">
+                    <h4><a href="${post.url}">${post.title}</a></h4>
+                    <div class="excerpt">${post.excerpt}</div>
+                    ${post.tags ? `<div class="tags">${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>` : ''}
+                </div>
+            `).join('');
+        }
+        
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => performSearch(this.value), 300);
+        });
+    });
+    </script>
 </body>
 </html>
