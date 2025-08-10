@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Testing LaTeX
+title: Testing LaTeX and Plotting
 date: 2025-08-09
 ---
 
@@ -26,3 +26,32 @@ $$\begin{align}
 \nabla \times \vec{\mathbf{E}} + \frac{1}{c} \frac{\partial\vec{\mathbf{B}}}{\partial t} &= \vec{\mathbf{0}} \\
 \nabla \cdot \vec{\mathbf{B}} &= 0
 \end{align}$$
+
+
+# Interactive Plotly Graph
+
+Here's some regular markdown text with math: $f(x) = x^2$
+
+<div id="plotly-div" style="width:100%;height:400px;"></div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+var trace1 = {
+  x: [1, 2, 3, 4],
+  y: [10, 11, 12, 13],
+  type: 'scatter',
+  name: 'Data 1'
+};
+
+var trace2 = {
+  x: [1, 2, 3, 4],
+  y: [16, 15, 14, 13],
+  type: 'scatter',
+  name: 'Data 2'
+};
+
+var data = [trace1, trace2];
+var layout = {title: 'My Interactive Plot'};
+
+Plotly.newPlot('plotly-div', data, layout);
+</script>
