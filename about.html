@@ -15,4 +15,19 @@ permalink: /about/
     <li>Contact information</li>
 </ul>
 
-<p>This page supports LaTeX too: $$E = mc^2$$</p>
+<p>This page supports LaTeX too: \\(E = mc^2\\)</p>
+
+<script>
+// Re-render math after page load
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+        });
+    }
+});
+</script>

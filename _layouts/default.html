@@ -31,19 +31,20 @@
     
     <style>
         :root {
-            /* Your custom dark palette */
-            --primary-color: #b91c1c;      /* Deep maroon */
-            --secondary-color: #dc2626;    /* Brighter maroon */
-            --accent-color: #d6d3d1;       /* Warm beige */
-            --text-color: #f1f5f9;         /* Light slate */
-            --text-light: #94a3b8;         /* Muted slate */
-            --bg-color: #0f172a;           /* Dark navy */
-            --bg-secondary: #1e293b;       /* Darker slate */
-            --bg-tertiary: #334155;        /* Medium slate */
-            --border-color: #475569;       /* Slate border */
-            --code-bg: #020617;            /* Very dark navy */
-            --maroon-hover: #991b1b;       /* Darker maroon for hovers */
-            --beige-muted: #a8a29e;        /* Muted beige */
+            /* Refined slate, maroon, tan palette */
+            --primary-color: #991b1b;      /* Rich maroon */
+            --secondary-color: #b91c1c;    /* Bright maroon */
+            --accent-color: #d2b48c;       /* Warm tan */
+            --text-color: #f1f5f9;         /* Cool white */
+            --text-light: #94a3b8;         /* Soft slate */
+            --bg-color: #1e293b;           /* Deep slate */
+            --bg-secondary: #334155;       /* Medium slate */
+            --bg-tertiary: #475569;        /* Light slate */
+            --border-color: #64748b;       /* Slate border */
+            --code-bg: #0f172a;            /* Very dark slate */
+            --maroon-hover: #7f1d1d;       /* Dark maroon for hovers */
+            --tan-muted: #c19a6b;          /* Muted tan */
+            --warm-white: #fef7ed;         /* Warm off-white for contrast */
         }
         
         * {
@@ -279,7 +280,7 @@
         
         .tag-count {
             background: var(--bg-tertiary);
-            color: var(--beige-muted);
+            color: var(--tan-muted);
             padding: 0.2rem 0.5rem;
             border-radius: 10px;
             font-size: 0.7rem;
@@ -362,14 +363,16 @@
             :root {
                 --primary-color: #7f1d1d;      /* Darker maroon for light mode */
                 --secondary-color: #991b1b;    
-                --accent-color: #78716c;       /* Darker beige */
+                --accent-color: #92400e;       /* Darker tan */
                 --text-color: #1e293b;         
                 --text-light: #64748b;         
-                --bg-color: #f8fafc;           
-                --bg-secondary: #f1f5f9;       
-                --bg-tertiary: #e2e8f0;        
-                --border-color: #cbd5e1;       
+                --bg-color: #fef7ed;           /* Warm cream background */
+                --bg-secondary: #f3f4f6;       /* Light grey */
+                --bg-tertiary: #e5e7eb;        
+                --border-color: #d1d5db;       
                 --code-bg: #1e293b;            
+                --tan-muted: #a16207;
+                --warm-white: #1e293b;
             }
         }
         
@@ -409,7 +412,7 @@
     </main>
     
     <footer>
-        <p>&copy; 2025 {{ site.title }} | Built with Jekyll & KaTeX with help from Claude</p>
+        <p>&copy; 2025 {{ site.title }} | Built with Jekyll & KaTeX</p>
     </footer>
 
     <!-- Search functionality -->
