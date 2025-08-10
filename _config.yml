@@ -1,0 +1,14 @@
+title: Your Blog Name
+description: Your blog description
+baseurl: ""
+url: "https://yourusername.github.io"
+
+# Markdown settings for LaTeX
+markdown: kramdown
+kramdown:
+  math_engine: katex
+  input: GFM
+  syntax_highlighter: rouge
+
+# Theme (optional - removes if you want custom styling)
+theme: minima
