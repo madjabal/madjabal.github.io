@@ -30,7 +30,7 @@ $$\begin{align}
 
 # Interactive Plotly Graph
 
-Here's some regular markdown text with math: $f(x) = x^2$
+Here's some regular markdown text with math: $$f(x) = x^2$$
 
 <div id="plotly-div" style="width:100%;height:400px;"></div>
 
